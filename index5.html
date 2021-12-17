@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhapchuoi" >
+<button onclick="kiemtra()">Kiểm tra</button>
+<p id="ketqua"></p>
+<script>
+    function kiemtra() {
+        let str = document.getElementById("nhapchuoi").value;
+        let arr=str.split(",");
+        let dem = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (parseInt(arr[i]) < 0) {
+                dem++;
+            }
+        }document.getElementById("ketqua").innerHTML="Có "+dem+" số nguyên âm";
+    }
+</script>
+</body>
+</html>
