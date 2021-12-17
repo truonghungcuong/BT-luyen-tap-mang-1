@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="nhapmang">
+<button onclick="kiemtra()">Kiểm tra</button>
+<script>
+    function kiemtra() {
+        let mang = document.getElementById("nhapmang").value;
+        let arr = mang.split(",");
+        let soV = parseInt(prompt(" "));
+        let count = 0;
+        let index = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (parseInt(arr[i]) === soV) {
+                count = 1;
+                index = i;
+            }
+        }
+        if (count === 0) {
+            alert("V không có");
+        } else {
+            for (j = index; j < arr.length - 1; j++) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+        arr.pop();
+        arr.push(0);
+        document.write(arr.join(","));
+    }
+</script>
+</body>
+</html>
